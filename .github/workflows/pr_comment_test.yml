@@ -13,8 +13,10 @@ jobs:
         run: |
           wget --quiet https://github.com/kishaningithub/randomtext/releases/download/v1.2.1/randomtext_1.2.1_linux_amd64.deb
           sudo dpkg -i randomtext_1.2.1_linux_amd64.deb
+          
           echo "Available commands (300 KB)" > pr-comment.txt
           randomtext -size 300KB -type words >> pr-comment.txt
+
           du -sh pr-comment.txt
 
       - name: Post apply output to GitHub PR
