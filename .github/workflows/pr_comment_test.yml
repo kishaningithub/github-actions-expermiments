@@ -8,6 +8,8 @@ jobs:
   pr_comment_test:
     name: pr_command_help
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: comment message
         run: |
