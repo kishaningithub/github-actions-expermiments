@@ -12,7 +12,7 @@ jobs:
       - name: publish
         id: publish
         run: |
-          echo "hello world"
+          echo "stdout=hello world" >> ${GITHUB_OUTPUT}
 
       - name: subscribe
         id: subscribe
