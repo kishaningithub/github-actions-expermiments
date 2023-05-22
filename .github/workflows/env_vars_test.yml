@@ -11,4 +11,5 @@ jobs:
       - name: publish
         id: publish
         run: |
+          printenv
           echo "${ENV_VARIABLE}"
