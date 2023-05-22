@@ -1,0 +1,14 @@
+name: Env vars test
+
+on:
+  push:
+
+jobs:
+  env_vars_test:
+    name: env_vars_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
+        id: publish
+        run: |
+          echo "${ENV_VARIABLE}"
