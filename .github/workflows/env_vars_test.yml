@@ -3,6 +3,9 @@ name: Env vars test
 on:
   push:
 
+env:
+  ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
+
 jobs:
   env_vars_test:
     name: env_vars_test
@@ -10,8 +13,6 @@ jobs:
     steps:
       - name: publish
         id: publish
-        env:
-          ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
         run: |
           printenv
           echo "${ENV_VARIABLE}"
