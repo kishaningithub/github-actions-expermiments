@@ -8,6 +8,7 @@ env:
 
 jobs:
   env_vars_test:
+    environment: "dev"
     name: env_vars_test
     runs-on: ubuntu-latest
     steps:
