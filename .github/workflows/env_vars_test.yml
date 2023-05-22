@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: publish
         id: publish
+        env:
+          ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
         run: |
           printenv
           echo "${ENV_VARIABLE}"
