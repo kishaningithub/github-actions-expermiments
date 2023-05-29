@@ -15,6 +15,7 @@ jobs:
           echo "stdout=hello world" >> ${GITHUB_OUTPUT}
 
       - name: subscribe
+        if: false
         id: subscribe
         run: |
           echo "${{ steps.publish.outputs.stdout }}"
