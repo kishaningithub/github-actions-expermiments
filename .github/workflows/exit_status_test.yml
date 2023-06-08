@@ -4,6 +4,11 @@ on:
   push:
 
 jobs:
+  shared_job:
+    name: shared job
+    uses: ./.github/workflows/shared_workflow.yml
+
+
   exit_status_test:
     name: exit_status_test
     runs-on: ubuntu-latest
