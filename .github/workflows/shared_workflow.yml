@@ -10,5 +10,6 @@ jobs:
     steps:
       - name: Test
         run: |
+          set -o pipefail
           ls asdsdsfsdfsdf | tee abc.txt
           echo "it works"
