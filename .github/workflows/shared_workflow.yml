@@ -11,5 +11,6 @@ jobs:
       - name: Test
         run: |
           set -o pipefail
+          echo "Sdfsdfsdf $unset_variable"
           ls asdsdsfsdfsdf | tee abc.txt
           echo "it works"
