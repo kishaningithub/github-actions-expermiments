@@ -1,0 +1,9 @@
+name: 'Hello World'
+description: 'Greet someone'
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        cd /non/existent/directory
+        echo "it works in here"
