@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Test
         run: |
-          set -o pipefail
+          set -uo pipefail
           echo "Sdfsdfsdf $unset_variable"
           ls asdsdsfsdfsdf | tee abc.txt
           echo "it works"
