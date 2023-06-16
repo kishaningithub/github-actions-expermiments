@@ -1,0 +1,16 @@
+name: Shared workflow
+
+on:
+  workflow_call:
+
+jobs:
+  shared_workflow:
+    name: shared_workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: |
+          set -uo pipefail
+          echo "Sdfsdfsdf $unset_variable"
+          ls asdsdsfsdfsdf | tee abc.txt
+          echo "it works"
