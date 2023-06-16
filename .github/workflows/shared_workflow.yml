@@ -12,7 +12,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: repo-files
-          path: .
+          path: custom-action/
       - name: Uploaded files
         run: ls -R
 
