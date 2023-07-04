@@ -15,7 +15,7 @@ jobs:
         run: echo "test=hello" >> "$GITHUB_OUTPUT"
       - id: step2
         run: echo "test=world" >> "$GITHUB_OUTPUT"
-      - id: step1
+      - id: step3
         run: echo "something=something" >> "$GITHUB_OUTPUT"
   job2:
     runs-on: ubuntu-latest
