@@ -1,0 +1,34 @@
+name: Artifacts
+
+on:
+  pull_request:
+
+jobs:
+  upload_artifact:
+    name: upload_artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/upload-artifact@v3
+        with:
+          name: repo-files
+          path: custom-action/
+      - name: Uploaded files
+        run: ls -R
+
+  download_artifact:
+    name: download_artifact
+    runs-on: ubuntu-latest
+    needs:
+      - upload_artifact
+    steps:
+      - name: Before download
+        run: |
+          pwd
+          ls -R
+      - uses: actions/download-artifact@v3
+        with:
+          name: repo-files
+
+      - name: After download
+        run: ls -R

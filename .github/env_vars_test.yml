@@ -1,0 +1,19 @@
+name: Env vars test
+
+on:
+  push:
+
+env:
+  ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
+
+jobs:
+  env_vars_test:
+    environment: "dev"
+    name: env_vars_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
+        id: publish
+        run: |
+          printenv
+          echo "${ENV_VARIABLE}"

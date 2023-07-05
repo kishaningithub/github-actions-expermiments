@@ -1,0 +1,29 @@
+name: Exit status test
+
+on:
+  push:
+
+jobs:
+  shared_job:
+    name: shared job
+    uses: ./.github/workflows/shared_workflow.yml
+
+
+  exit_status_test:
+    name: exit_status_test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./custom-action
+
+      - name: one
+        run: |
+          cd /non/existent/directory
+          echo "it works in here"
+
+      - name: two
+        run: |
+          set -eu
+          cd /non/existent/directory
+          echo "it works in here"

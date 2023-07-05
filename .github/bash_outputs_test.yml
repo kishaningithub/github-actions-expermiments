@@ -1,0 +1,21 @@
+name: Bash outputs test
+
+on:
+  push:
+  workflow_call:
+
+jobs:
+  bash_outputs_test:
+    name: bash_outputs_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
+        id: publish
+        run: |
+          echo "stdout=hello world" >> ${GITHUB_OUTPUT}
+
+      - name: subscribe
+        if: false
+        id: subscribe
+        run: |
+          echo "${{ steps.publish.outputs.stdout }}"
