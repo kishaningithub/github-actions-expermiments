@@ -1,7 +1,6 @@
 name: Job outputs test
 
 on:
-  pull_request:
   push:
 
 jobs:
@@ -19,6 +18,13 @@ jobs:
         run: |
           echo "something=something" >> "$GITHUB_OUTPUT"
           echo "something=something" >> "$GITHUB_ENV"
+      - id: step4
+        env:
+          BLAH_BLAH: ${{env.something}}
+        run: |
+          echo "something is ${something}"
+          echo "something is ${{env.something}}"
+          echo "something BLAH is ${BLAH_BLAH}"
   job2:
     runs-on: ubuntu-latest
     needs: job1
